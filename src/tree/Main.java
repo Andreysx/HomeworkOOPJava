@@ -4,23 +4,29 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        Human one  = new Human("Андрей","Ромашин", null,null, 45);
-        Human two  = new Human("Валерия","Ромашина", null,null, 40);
-        Human three  = new Human("Дмитрий","Ромашин", one,two, 20);
-        Human four  = new Human("Шухраджон","Рафитович", null,null, 38);
-        Human five  = new Human("Зухра","Рафитовна", null,null, 45);
-        Human six  = new Human("Святополк","Рафитович", four,five, 18);
-        Human seven  = new Human("Медвия","Ромашина", one,two, 16);
+
+
+//        String path = "src/tree/tree.txt";
+//        Write write = new FileHandler();
+//        FamilyTree famTree = (FamilyTree) write.loadSomething(path);
+
+        Human one  = new Human("Андрей","Ромашин", null,null, 45, Gender.Male);
+        Human two  = new Human("Валерия","Ромашина", null,null, 40, Gender.Female);
+        Human three  = new Human("Дмитрий","Ромашин", one,two, 20, Gender.Male);
+        Human four  = new Human("Шухраджон","Рафитович", null,null, 38, Gender.Male);
+        Human five  = new Human("Зухра","Рафитовна", null,null, 45, Gender.Female);
+        Human six  = new Human("Святополк","Рафитович", four,five, 18, Gender.Male);
+        Human seven  = new Human("Медвия","Ромашина", one,two, 16, Gender.Female);
 
 
         FamilyTree famTree = new FamilyTree();
-        famTree.addHumans(one);
-        famTree.addHumans(two);
-        famTree.addHumans(three);
-        famTree.addHumans(four);
-        famTree.addHumans(five);
-        famTree.addHumans(six);
-        famTree.addHumans(seven);
+        famTree.addHuman(one);
+        famTree.addHuman(two);
+        famTree.addHuman(three);
+        famTree.addHuman(four);
+        famTree.addHuman(five);
+        famTree.addHuman(six);
+        famTree.addHuman(seven);
 
         System.out.println("******************************************");
         System.out.println("Семейное дерево");
@@ -42,8 +48,11 @@ public class Main {
 
         System.out.println("********************************************");
         System.out.println("Ищем детей");
-        List<Human> childrens = famTree.getChildrens(one);
+        List<Human> childrens = famTree.getChildren(one);
         System.out.println(one);
         System.out.println(childrens);
+
+//        write.writeSomething(famTree, path);
+
     }
 }

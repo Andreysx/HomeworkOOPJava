@@ -1,15 +1,17 @@
 package tree;
+import java.io.Serializable;
 import java.util.List;
-public class Human {
+public class Human implements Serializable {
     private String firstname;
     private String lastname;
     private Integer age;
     private Human father;
     private Human mother;
+    private Gender gender;
 //    private List<Human> children;
 //    Gender gender;
 
-    public Human(String firstname, String lastname, Human father, Human mother, Integer age) {
+    public Human(String firstname, String lastname, Human father, Human mother, Integer age, Gender gender) {
 
         this.firstname = firstname;
         this.lastname = lastname;
@@ -53,3 +55,4 @@ public class Human {
         }
     }
 }
+

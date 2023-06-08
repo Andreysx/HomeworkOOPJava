@@ -1,7 +1,8 @@
 package tree;
+import java.io.Serializable;
 import java.util.List;
 import java.util.ArrayList;
-public class FamilyTree {
+public class FamilyTree implements Serializable {
 
     private List<Human> humanlist;
 
@@ -11,12 +12,12 @@ public class FamilyTree {
         humanlist = new ArrayList<>();
     }
 
-    public void addHumans(Human human){
+    public void addHuman(Human human){
         boolean flag = false;
         for (Human addHuman : humanlist){
             if(human.getFirstname().equals(addHuman.getFirstname())){
                 if(human.getLastname().equals(addHuman.getLastname())){
-                    if(human.getAge() != addHuman.getAge()){
+                    if(human.getAge().equals(addHuman.getAge())){
                         flag = true;
                     }
                 }
@@ -38,7 +39,7 @@ public class FamilyTree {
 
     public Human toFindByAge(Integer age){
         for (Human human : humanlist){
-            if (human.getAge() == age){
+            if (human.getAge().equals(age)){
                 return human;
             }
         }
@@ -66,7 +67,7 @@ public class FamilyTree {
         return parents;
     }
 
-    public List<Human> getChildrens(Human parent){
+    public List<Human> getChildren(Human parent){
         List<Human> children = new ArrayList<>();
         for(Human human : humanlist){
             if(human.getMother() == parent && human.getFather() != null){
@@ -79,5 +80,10 @@ public class FamilyTree {
         return children;
     }
 
+
+    public void save(){
+
+
+    }
 
 }
