@@ -1,4 +1,6 @@
-package tree;
+package tree.filehandler;
+
+import tree.filehandler.Write;
 
 import java.io.*;
 

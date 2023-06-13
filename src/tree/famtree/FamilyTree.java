@@ -1,8 +1,13 @@
-package tree;
+package tree.famtree;
+import tree.human.Human;
+import tree.human.comparators.HumanComparatorSortByFirstname;
+import tree.human.comparators.HumanComparatorSortByLastname;
+import tree.iterators.HumanIterator;
+
 import java.io.Serializable;
-import java.util.List;
-import java.util.ArrayList;
-public class FamilyTree implements Serializable {
+import java.util.*;
+
+public class FamilyTree implements Serializable, Iterable<Human> {
 
     private List<Human> humanlist;
 
@@ -79,11 +84,21 @@ public class FamilyTree implements Serializable {
         }
         return children;
     }
-
-
-    public void save(){
-
-
+    @Override
+    public Iterator<Human> iterator() {
+         return new HumanIterator(humanlist);//return new humanlist.iterator()
     }
+
+    public void sortByFirstName(){
+        humanlist.sort (new HumanComparatorSortByFirstname());
+    }
+
+    public void sortByLastName(){
+        humanlist.sort (new HumanComparatorSortByLastname());
+    }
+
+
+
+
 
 }

@@ -1,7 +1,8 @@
-package tree;
+package tree.human;
+
 import java.io.Serializable;
-import java.util.List;
-public class Human implements Serializable {
+
+public class Human implements Serializable, Comparable<Human> {
     private String firstname;
     private String lastname;
     private Integer age;
@@ -42,6 +43,10 @@ public class Human implements Serializable {
         return age;
     }
 
+    @Override
+    public int compareTo(Human o) {
+        return 0;
+    }
     @Override
     public String toString() {
         if (mother != null && father != null) {
