@@ -20,23 +20,27 @@ public class Main {
         Human six  = new Human("Георгий","Альбертович", four,five, 18, Gender.Male);
         Human seven  = new Human("Просковья","Ромашина", one,two, 16, Gender.Female);
 
-
         FamilyTree<Human> famTree = new FamilyTree<>();
-
-        famTree.addHuman(one);
-        famTree.addHuman(two);
-        famTree.addHuman(three);
-        famTree.addHuman(four);
-        famTree.addHuman(five);
-        famTree.addHuman(six);
-        famTree.addHuman(seven);
-
-
+        Service service = new Service();
+        service.addHuman(one);
+        service.addHuman(two);
+        service.addHuman(three);
+        service.addHuman(four);
+        service.addHuman(five);
+        service.addHuman(six);
+        service.addHuman(seven);
 
 
-        System.out.println("******************************************");
+
+
+        System.out.println("**");
         System.out.println("Семейное дерево");
-        System.out.println(famTree.getHumanList());
+        service.sortByFirstName();
+        System.out.println(service.printHumanList());
+        System.out.println("**");
+        service.sortByLastName();
+        System.out.println(service.printHumanList());
+
 //
 //
 //        String name = "Дмитрий";
@@ -62,13 +66,6 @@ public class Main {
 
 
 
-////
-//        Service service = new Service();
-//        service.sortByFirstName();
-//        System.out.println(famTree.getHumanList());
-////
-//        service.sortByLastName();
-//        System.out.println(famTree.getHumanList());
 
 
     }

@@ -45,7 +45,18 @@ public class Human implements Serializable, Comparable<Human>, FamilyTreeItem {
         return age;
     }
 
+    public String getHumanInfo() {
+        String humanInfo = toString();
+        return humanInfo;
+    }
 
+    @Override
+    public String getInfo() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("\n");
+        sb.append(getHumanInfo());
+        return sb.toString();
+    }
 
     @Override
     public int compareTo(Human o) {

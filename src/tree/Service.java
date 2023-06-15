@@ -14,15 +14,9 @@ public class Service {
         familyTree = new FamilyTree<>();
     }
 
-//    public String printHumanList() {
-//        StringBuilder sb = new StringBuilder();
-//        for (Human human : familyTree) {
-//            for (FamilyTreeItem human : familyTree) {
-//                sb.append(human.getInfo());
-//                sb.append("\n");
-//            }
-//            return sb.toString();
-//        }
+    public void addHuman(Human human) {
+        familyTree.addHuman(human);
+    }
 
     public void sortByFirstName() {
         familyTree.sortByFirstName();
@@ -32,8 +26,12 @@ public class Service {
         familyTree.sortByLastName();
     }
 
-//    public void addHuman(Human human) {
-//        familyTree.addHuman(human);
-//    }
+    public String printHumanList() {
+        StringBuilder sb = new StringBuilder();
+        for (FamilyTreeItem human : familyTree) {
+            sb.append(human.getInfo());
+        }
+        return sb.toString();
+    }
 
 }

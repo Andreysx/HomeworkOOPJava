@@ -12,7 +12,7 @@ public interface FamilyTreeItem {
     Human getMother();
     Integer getAge();
 
-//    String getInfo();
+    String getInfo();
 
 
 
