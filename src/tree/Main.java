@@ -14,14 +14,15 @@ public class Main {
 
         Human one  = new Human("Андрей","Ромашин", null,null, 45, Gender.Male);
         Human two  = new Human("Валерия","Ромашина", null,null, 40, Gender.Female);
-        Human three  = new Human("Дмитрий","Ромашин", one,two, 20, Gender.Male);
-        Human four  = new Human("Шухраджон","Альбертович", null,null, 38, Gender.Male);
-        Human five  = new Human("Зухра","Альбертовна", null,null, 45, Gender.Female);
-        Human six  = new Human("Святополк","Альбертович", four,five, 18, Gender.Male);
-        Human seven  = new Human("Медвия","Ромашина", one,two, 16, Gender.Female);
+        Human three  = new Human("Константин","Ромашин", one,two, 20, Gender.Male);
+        Human four  = new Human("Джамиль","Альбертович", null,null, 38, Gender.Male);
+        Human five  = new Human("Евтия","Альбертовна", null,null, 45, Gender.Female);
+        Human six  = new Human("Георгий","Альбертович", four,five, 18, Gender.Male);
+        Human seven  = new Human("Просковья","Ромашина", one,two, 16, Gender.Female);
 
 
-        FamilyTree famTree = new FamilyTree();
+        FamilyTree<Human> famTree = new FamilyTree<>();
+
         famTree.addHuman(one);
         famTree.addHuman(two);
         famTree.addHuman(three);
@@ -30,9 +31,12 @@ public class Main {
         famTree.addHuman(six);
         famTree.addHuman(seven);
 
-//        System.out.println("******************************************");
-//        System.out.println("Семейное дерево");
-//        System.out.println(famTree.getHumanList());
+
+
+
+        System.out.println("******************************************");
+        System.out.println("Семейное дерево");
+        System.out.println(famTree.getHumanList());
 //
 //
 //        String name = "Дмитрий";
@@ -57,11 +61,14 @@ public class Main {
 //        write.writeSomething(famTree, path);
 
 
-        famTree.sortByFirstName();
-        System.out.println(famTree.getHumanList());
 
-        famTree.sortByLastName();
-        System.out.println(famTree.getHumanList());
+////
+//        Service service = new Service();
+//        service.sortByFirstName();
+//        System.out.println(famTree.getHumanList());
+////
+//        service.sortByLastName();
+//        System.out.println(famTree.getHumanList());
 
 
     }

@@ -1,8 +1,10 @@
 package tree.human;
 
+import tree.famtree.FamilyTreeItem;
+
 import java.io.Serializable;
 
-public class Human implements Serializable, Comparable<Human> {
+public class Human implements Serializable, Comparable<Human>, FamilyTreeItem {
     private String firstname;
     private String lastname;
     private Integer age;
@@ -43,18 +45,21 @@ public class Human implements Serializable, Comparable<Human> {
         return age;
     }
 
+
+
     @Override
     public int compareTo(Human o) {
         return 0;
     }
+
     @Override
     public String toString() {
         if (mother != null && father != null) {
             return firstname + " " + lastname + age + "лет" + " (мать: " + mother + ", отец: " + father + ")";
         } else if (mother != null && father == null) {
-            return firstname + " " + lastname + " " +  age + " " + "лет" + " (мать: " + mother + ")";
+            return firstname + " " + lastname + " " + age + " " + "лет" + " (мать: " + mother + ")";
         } else if (mother == null && father != null) {
-            return firstname + " " + lastname + " " +  age + " " + " лет" + " (отец: " + father + ")";
+            return firstname + " " + lastname + " " + age + " " + " лет" + " (отец: " + father + ")";
         } else {
             return firstname + " " + lastname + " " + age;
         }
