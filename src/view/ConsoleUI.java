@@ -31,12 +31,12 @@ public class ConsoleUI implements View {
 
     @Override
     public void run() throws IOException, ClassNotFoundException {
-        print("-----Добро пожаловать в генеологическое дерево!-----");
+        print("Добро пожаловать в генеологическое дерево!");
         printMainMenu();
     }
 
     public void stop() {
-        print("Ещё увидимся! Удачи!");
+        print("До свидания!");
         work = false;
     }
 
@@ -128,7 +128,7 @@ public class ConsoleUI implements View {
 
 
     public void getHumanList() {
-        print("-----Фамильное дерево-----");
+        print("Фамильное дерево");
         presenter.getHumanList();
     }
 

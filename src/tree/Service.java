@@ -5,6 +5,7 @@ import tree.famtree.FamilyTree;
 import tree.filehandler.FileHandler;
 import tree.human.Human;
 import tree.filehandler.Write;
+import view.commands.GetHumanList;
 
 public class Service {
 
@@ -46,10 +47,10 @@ public class Service {
         return sb.toString();
     }
     public void writeSomething(){
-        String path = "src/tree.txt";
+        String path = "src\\tree.txt";
         Write write = new FileHandler();
-        FamilyTree familyTree = (FamilyTree) write.loadSomething(path);
-        write.writeSomething(familyTree,path);
+        String family = getHumanList();
+        write.writeSomething(family,path);
 
 
     }
