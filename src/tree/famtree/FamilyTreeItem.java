@@ -10,11 +10,10 @@ public interface FamilyTreeItem {
     Human getFather();
 
     Human getMother();
-    Integer getAge();
+
+    String getAge();
 
     String getInfo();
-
-
-
-
 }
+
+

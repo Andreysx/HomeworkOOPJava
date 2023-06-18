@@ -7,14 +7,14 @@ import java.io.Serializable;
 public class Human implements Serializable, Comparable<Human>, FamilyTreeItem {
     private String firstname;
     private String lastname;
-    private Integer age;
+    private String age;
     private Human father;
     private Human mother;
     private Gender gender;
 //    private List<Human> children;
 //    Gender gender;
 
-    public Human(String firstname, String lastname, Human father, Human mother, Integer age, Gender gender) {
+    public Human(String firstname, String lastname, Human father, Human mother, String age, Gender gender) {
 
         this.firstname = firstname;
         this.lastname = lastname;
@@ -41,7 +41,7 @@ public class Human implements Serializable, Comparable<Human>, FamilyTreeItem {
     }
 
 
-    public Integer getAge() {
+    public String getAge() {
         return age;
     }
 
@@ -66,7 +66,7 @@ public class Human implements Serializable, Comparable<Human>, FamilyTreeItem {
     @Override
     public String toString() {
         if (mother != null && father != null) {
-            return firstname + " " + lastname + age + "лет" + " (мать: " + mother + ", отец: " + father + ")";
+            return firstname + " " + lastname +" "+ age + " лет" + " (мать: " + mother + ", отец: " + father + ")";
         } else if (mother != null && father == null) {
             return firstname + " " + lastname + " " + age + " " + "лет" + " (мать: " + mother + ")";
         } else if (mother == null && father != null) {

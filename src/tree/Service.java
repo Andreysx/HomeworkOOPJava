@@ -26,6 +26,15 @@ public class Service {
         familyTree.sortByLastName();
     }
 
+    public String getHumanList() {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (FamilyTreeItem human: familyTree) {
+            stringBuilder.append(human.getInfo());
+            stringBuilder.append("\n");
+        }
+        return stringBuilder.toString();
+    }
+
     public String printHumanList() {
         StringBuilder sb = new StringBuilder();
         for (FamilyTreeItem human : familyTree) {
