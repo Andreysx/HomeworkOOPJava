@@ -31,5 +31,7 @@ public class Presenter {
         service.sortByLastName();
         getHumanList();
     }
-
+    public void writeSomething(){
+        service.writeSomething();
+    }
 }

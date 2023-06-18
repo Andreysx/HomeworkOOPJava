@@ -16,6 +16,7 @@ public class Menu {
         commandList.add(new AddHuman(consoleUI));
         commandList.add(new SortByFirstName(consoleUI));
         commandList.add(new SortByLastName(consoleUI));
+        commandList.add(new WriteSomething(consoleUI));
     }
 
     public String printMenu() {

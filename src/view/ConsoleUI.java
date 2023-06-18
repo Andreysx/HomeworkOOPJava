@@ -147,4 +147,8 @@ public class ConsoleUI implements View {
     public void sortByLastName(){
         presenter.sortByLastName();
     }
+
+    public void writeSomething(){
+        presenter.writeSomething();
+    }
 }

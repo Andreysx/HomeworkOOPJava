@@ -2,9 +2,12 @@ package tree;
 
 import tree.famtree.FamilyTreeItem;
 import tree.famtree.FamilyTree;
+import tree.filehandler.FileHandler;
 import tree.human.Human;
+import tree.filehandler.Write;
 
 public class Service {
+
 
     private FamilyTree<Human> familyTree;
 
@@ -41,6 +44,14 @@ public class Service {
             sb.append(human.getInfo());
         }
         return sb.toString();
+    }
+    public void writeSomething(){
+        String path = "src/tree.txt";
+        Write write = new FileHandler();
+        FamilyTree familyTree = (FamilyTree) write.loadSomething(path);
+        write.writeSomething(familyTree,path);
+
+
     }
 
 }
